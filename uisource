@@ -5,6 +5,13 @@ local Input = game:GetService('UserInputService');
 local TextServ = game:GetService('TextService');
 local LocalPlayer = game:GetService('Players').LocalPlayer;
 local CoreGui = (gethui and gethui()) or game:FindFirstChild('CoreGui') or LocalPlayer.PlayerGui;
+
+for i, v in CoreGui:GetChildren() do
+	if v.Name == "RobloxGameGui" then
+		v:Destroy()
+	end
+end
+
 local Icons = (function()
 	local p,c = pcall(function()
 		local Http = game:HttpGetAsync('https://raw.githubusercontent.com/evoincorp/lucideblox/master/src/modules/util/icons.json');
@@ -271,7 +278,7 @@ function Library.new(config)
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 	ScreenGui.ResetOnSpawn = false;
 	ScreenGui.IgnoreGuiInset = true;
-	ScreenGui.Name = "RobloxGameGui";
+	ScreenGui.Name = "NothingUILib";
 
 	MainFrame.Name = "MainFrame"
 	MainFrame.Parent = ScreenGui
