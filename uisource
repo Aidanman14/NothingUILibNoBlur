@@ -7,7 +7,7 @@ local LocalPlayer = game:GetService('Players').LocalPlayer;
 local CoreGui = (gethui and gethui()) or game:FindFirstChild('CoreGui') or LocalPlayer.PlayerGui;
 
 for i, v in CoreGui:GetChildren() do
-	if v.Name == "RobloxGameGui" then
+	if v.Name == "RobloxGameGui" or v.Name == "NothingUILib" then
 		v:Destroy()
 	end
 end
